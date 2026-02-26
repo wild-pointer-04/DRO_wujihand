@@ -1,0 +1,37 @@
+{
+    "allegro": [],
+    "barrett": [],
+    "ezgripper": [
+        "base_link"
+    ],
+    "robotiq_3finger": [],
+    "shadowhand": [
+        "forearm",
+        "wrist",
+        "ffknuckle",
+        "mfknuckle",
+        "rfknuckle",
+        "lfknuckle",
+        "thbase"
+    ],
+    "leaphand": [],
+    "omnihand": [
+        "world",
+        "base_link",
+        "thumb_metacarpals_base1",
+        "thumb_Virtual_Point",
+        "index_Virtual_Point",
+        "middle_Virtual_Point",
+        "ring_Virtual_Point",
+        "pinky_Virtual_Point"
+    ],
+    "wujihand": [
+        "world",
+        "virtual_link_x",
+        "virtual_link_y",
+        "virtual_link_z",
+        "virtual_link_roll",
+        "virtual_link_pitch",
+        "virtual_link_yaw"
+    ]
+}

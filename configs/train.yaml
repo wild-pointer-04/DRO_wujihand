@@ -1,0 +1,45 @@
+defaults:
+  - log.yaml
+  - model.yaml
+  - dataset: cmap_dataset.yaml
+  - _self_
+
+#name: 'model_3robots'
+name: 'run_full'
+
+seed: 42
+gpu: [0]
+  #- 0
+  # - 1
+  # - 2
+  # - 3
+  # - 4
+  # - 5
+  # - 6
+  # - 7
+
+load_from_checkpoint: False
+log_every_n_steps: 5
+
+training:
+  max_epochs: 200
+  # max_epochs: 2
+
+  accumulate_grad_batches: 4 #梯度累计 单卡显存不太够
+
+  save_dir: '${output_dir}/state_dict'
+  save_every_n_epoch: 5
+
+  lr: 1e-4
+
+  loss_kl: True
+  loss_kl_weight: 0.01
+
+  loss_r: True
+  loss_r_weight: 1
+
+  loss_se3: True
+  loss_se3_weight: 0.01
+
+  loss_depth: True
+  loss_depth_weight: 1

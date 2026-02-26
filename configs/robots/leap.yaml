@@ -1,0 +1,35 @@
+# configs/robots/leap.yaml
+name: leaphand
+urdf_path: data/data_urdf/robot/leaphand/leap_hand_right_extended.urdf
+mesh_dir: data/data_urdf/robot/leaphand/meshes/visual
+
+joint_names:
+  - thumb_joint_0
+  - thumb_joint_1
+  - thumb_joint_2
+  - thumb_joint_3
+  - index_joint_0
+  - index_joint_1
+  - index_joint_2
+  - index_joint_3
+  - middle_joint_0
+  - middle_joint_1
+  - middle_joint_2
+  - middle_joint_3
+  - ring_joint_0
+  - ring_joint_1
+  - ring_joint_2
+  - ring_joint_3
+  - little_joint_0
+  - little_joint_1
+  - little_joint_2
+  - little_joint_3
+
+tip_links:
+  - thumb_tip
+  - index_tip
+  - middle_tip
+  - ring_tip
+  - little_tip
+
+remove_links: []

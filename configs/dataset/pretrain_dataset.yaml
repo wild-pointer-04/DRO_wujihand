@@ -1,0 +1,9 @@
+robot_names:
+  - 'barrett'
+  - 'allegro'
+  - 'shadowhand'
+  - 'omnihand'
+  - 'wujihand'
+
+batch_size: 32
+num_workers: 16
