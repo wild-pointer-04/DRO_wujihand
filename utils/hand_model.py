@@ -135,9 +135,21 @@ class HandModel:
         # 将 list 转换为 tensor 以支持运算
         lower = torch.tensor(lower, dtype=torch.float32, device=self.device)
         upper = torch.tensor(upper, dtype=torch.float32, device=self.device)
-        
+
         canonical_q = lower * 0.75 + upper * 0.25
         canonical_q[:6] = 0
+        return canonical_q
+
+    def get_paper_canonical_q(self, q):
+        """
+        Paper Section III-A: keep the wrist 6D pose from q,
+        set all finger joints (index 6:) to exactly 0 (fully open hand).
+
+        This produces P^B (canonical configuration) with the SAME wrist pose
+        as P^A (grasp configuration), ensuring index consistency for contrastive learning.
+        """
+        canonical_q = q.clone()
+        canonical_q[6:] = 0.0
         return canonical_q
 
     def get_initial_q(self, q=None, max_angle: float = math.pi / 6):

@@ -1,0 +1,11 @@
+robot_names:
+  - 'wujihand'
+
+batch_size: 16
+num_workers: 8
+
+# Options for WujiPretrainDataset
+num_points: 512           # Total hand points (paper N_R)
+link_num_points: 512       # Points per link mesh
+use_synthetic_data: true   # Use pre-generated data (set false for online generation)
+num_samples: 50000         # Samples per epoch

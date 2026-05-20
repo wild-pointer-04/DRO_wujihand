@@ -139,7 +139,7 @@ def main():
         for data_idx in tqdm(range(batch_size), desc=f"{robot_name}/{object_name}", leave=False):
             initial_q = data['initial_q'][data_idx: data_idx + 1].to(device)
             robot_pc = data['robot_pc'][data_idx: data_idx + 1].to(device)
-            object_pc = data['object_pc'][data_idx: data_idx + 1].to(device)
+            full_object_pc = data['object_pc'][data_idx: data_idx + 1].to(device)
 
 
             # === 执行裁剪逻辑 ===

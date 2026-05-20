@@ -1,0 +1,35 @@
+defaults:
+  - log.yaml
+  - _self_
+
+name: 'pretrain_wujihand'
+
+seed: 42
+gpu:
+  - 0
+
+load_from_checkpoint: false
+log_every_n_steps: 5
+
+wandb:
+  project: 'DROGrasp-Pretrain'
+
+model:
+  emb_dim: 512
+
+training:
+  max_epochs: 100
+
+  save_dir: '${output_dir}/state_dict'
+  save_every_n_epoch: 5
+
+  lr: 1e-4
+  temperature: 0.1
+
+dataset:
+  batch_size: 16
+  num_workers: 8
+  num_points: 512
+  link_num_points: 512
+  use_synthetic_data: true
+  num_samples: 50000
